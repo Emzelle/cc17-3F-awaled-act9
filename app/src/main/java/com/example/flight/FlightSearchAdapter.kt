@@ -18,7 +18,7 @@ class AirportAdapter(private val onFavoriteClick: (Favorite) -> Unit) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AirportViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.airport_item, parent, false)
+            .inflate(R.layout.item_flight, parent, false)
         return AirportViewHolder(view)
     }
 

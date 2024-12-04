@@ -31,7 +31,8 @@ class FlightViewModel(application: Application) : AndroidViewModel(application) 
 
     fun loadFavorites() {
         viewModelScope.launch {
-            _favorites.value = dao.getFavorites() // Fetch favorites via DAO
+            val result = dao.getFavorites() // Suspend function call
+            _favorites.value = result
         }
     }
 
