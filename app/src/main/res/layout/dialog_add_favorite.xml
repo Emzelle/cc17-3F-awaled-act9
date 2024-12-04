@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/departureCodeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Departure IATA Code (e.g., LAX)"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/destinationCodeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Destination IATA Code (e.g., JFK)"
+        android:layout_marginTop="16dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/addFavoriteDialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Favorite"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#007AFF"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium" />
+</LinearLayout>

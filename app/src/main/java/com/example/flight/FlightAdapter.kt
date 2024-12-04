@@ -10,7 +10,7 @@ import com.example.flight.R
 class FlightAdapter : ListAdapter<Airport, FlightAdapter.FlightViewHolder>(FLIGHT_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlightViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_airport, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_flight, parent, false)
         return FlightViewHolder(view)
     }
 
