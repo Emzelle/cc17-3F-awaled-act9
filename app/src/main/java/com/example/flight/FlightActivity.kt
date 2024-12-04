@@ -8,12 +8,12 @@ import com.example.flight.R
 class FlightActivity : AppCompatActivity() {
 
     private val flightViewModel: FlightViewModel by viewModels {
-        FlightViewModelFactory((application as FlightApplication).repository)
+        FlightViewModelFactory((application as AppDatabase).repository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorites)
+        setContentView(R.layout.activity_flight)
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)

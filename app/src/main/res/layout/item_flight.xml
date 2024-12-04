@@ -16,7 +16,7 @@
 
         <!-- Flight Name -->
         <TextView
-            android:id="@+id/flightNameTextView"
+            android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Airport Name"
@@ -26,7 +26,7 @@
 
         <!-- Flight IATA Code -->
         <TextView
-            android:id="@+id/flightCodeTextView"
+            android:id="@+id/codeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IATA Code: LAX"

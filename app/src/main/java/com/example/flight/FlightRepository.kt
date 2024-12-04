@@ -2,7 +2,6 @@ import androidx.lifecycle.LiveData
 
 class FlightRepository(private val airportDao: AirportDao, private val favoriteDao: FavoriteDao) {
 
-    val repository: FlightRepository
     val allAirports: LiveData<List<Airport>> = airportDao.getAllAirports()
     val favoriteFlights: LiveData<List<Favorite>> = favoriteDao.getFavorites()
 
