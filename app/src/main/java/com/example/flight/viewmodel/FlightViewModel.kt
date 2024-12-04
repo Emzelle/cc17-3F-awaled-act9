@@ -31,14 +31,15 @@ class FlightViewModel(application: Application) : AndroidViewModel(application) 
 
     fun loadFavorites() {
         viewModelScope.launch {
-            _favorites.value = dao.getFavorites()
+            _favorites.value = dao.getFavorites() // Fetch favorites via DAO
         }
     }
 
     fun addFavorite(favorite: Favorite) {
         viewModelScope.launch {
-            dao.insertFavorite(favorite)
-            loadFavorites()
+            dao.insertFavorite(favorite) // Insert via DAO
+            loadFavorites() // Reload favorites after inserting
         }
     }
 }
+
