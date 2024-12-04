@@ -1,13 +1,11 @@
 import android.content.Context
-import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Airport::class, Favorite::class], version = 1, exportSchema = false)
+@Database(entities = [Airport::class, Favorite::class], version = 1)
 abstract class FlightDatabase : RoomDatabase() {
-
-    abstract fun flightDao(): Dao
+    abstract fun flightDao(): AirportDao
 
     companion object {
         @Volatile
@@ -18,8 +16,8 @@ abstract class FlightDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     FlightDatabase::class.java,
-                    "flight_database"
-                ).build()
+                    "flight_search.db"
+                ).createFromAsset("databases/flight_search.db").build()
                 INSTANCE = instance
                 instance
             }

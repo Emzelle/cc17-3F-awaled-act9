@@ -1,27 +1,23 @@
-import androidx.lifecycle.LiveData
+import android.content.Context
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
-class FlightRepository(private val airportDao: AirportDao, private val favoriteDao: FavoriteDao) {
+val Context.dataStore: PreferencesDataStore by preferencesDataStore("search_preferences")
 
-    val allAirports: LiveData<List<Airport>> = airportDao.getAllAirports()
-    val favoriteFlights: LiveData<List<Favorite>> = favoriteDao.getFavorites()
+object DataStoreManager {
+    private val SEARCH_TEXT = stringPreferencesKey("search_text")
 
-    suspend fun getFlightsByDeparture(iataCode: String): List<Airport> {
-        return airportDao.getFlightsByDeparture(iataCode)
+    fun getSearchText(context: Context): Flow<String?> {
+        return context.dataStore.data.map { preferences ->
+            preferences[SEARCH_TEXT]
+        }
     }
 
-    suspend fun insertAirport(airport: Airport) {
-        airportDao.insertAirport(airport)
-    }
-
-    suspend fun insertAirports(airports: List<Airport>) {
-        airportDao.insertAirports(airports)
-    }
-
-    suspend fun insertFavorite(favorite: Favorite) {
-        favoriteDao.insertFavorite(favorite)
-    }
-
-    suspend fun deleteFavorite(favorite: Favorite) {
-        favoriteDao.deleteFavorite(favorite)
+    suspend fun saveSearchText(context: Context, searchText: String) {
+        context.dataStore.edit { preferences ->
+            preferences[SEARCH_TEXT] = searchText
+        }
     }
 }

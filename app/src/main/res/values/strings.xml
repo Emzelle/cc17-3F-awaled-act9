@@ -1,3 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">flight</string>
+    <string name="app_name">YourAppName</string>
+
+    <string name="hint_search">Search...</string>
+    <string name="label_search">Search</string>
+    <string name="action_speak">Speak</string>
+    <string name="action_clear">Clear</string>
+
+    <string name="empty_state_message">No results found</string>
+    <string name="empty_state_action">Try Again</string>
+    <string name="empty_state_image">No results found</string>
+
+
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="delete_favorite">Delete</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_cancel">Cancel</string>
+
+    <string name="message_loading">Loading...</string>
+    <string name="message_error">Something went wrong!</string>
+    <string name="message_saved">Item saved successfully</string>
+    <string name="message_deleted">Item deleted successfully</string>
+
+    <string name="search_icon">Search icon</string>
+    <string name="mic_icon">Microphone icon</string>
+    <string name="content_description_star_icon">Star icon</string>
+    <string name="content_description_delete_icon">Delete icon</string>
+    <string name="content_description_empty_state_icon">Empty state illustration</string>
 </resources>
